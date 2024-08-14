@@ -1,0 +1,58 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+.review-description {
+  /* border: black 0.25px solid; */
+  width: auto;
+}
+
+.review-image {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+}
+
+.review-information {
+  margin-left: 5px;
+  width: auto;
+}
+
+.review {
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 10px;
+  border: black 0.5px solid;
+  margin-bottom: 5px;
+}
+
+.review-container {
+  text-align: left;
+  display: flex;
+}
