@@ -37,20 +37,39 @@
   width: 30%;
   height: 30%;
   object-fit: contain;
+  align-self: center;
 }
 
 .review-information {
-  margin-left: 5px;
+  margin-left: 15px;
   width: auto;
 }
 
+.details {
+  display: inline-block;
+}
+
 .review {
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 10px;
   border: black 0.5px solid;
   margin-bottom: 5px;
 }
+
+.like-button{
+  max-width: 10%;
+  max-height: 10%;
+  margin-left: auto;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.like-info{
+  text-align: right;
+  display: block;
+}
+
 
 .review-container {
   text-align: left;
