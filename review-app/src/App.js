@@ -1,56 +1,20 @@
 import './App.css';
 import React, { useState, useEffect } from "react"; 
+import axios from 'axios';
 
 function App() {
 
-//   const reviews = [
-//     {
-//       id: 1,
-//       reviewer: "Joe Blogs",
-//       media_type: "Video Game",
-//       media_name: "Sid Meiers Civilisation 6",
-//       media_art: "https://image.api.playstation.com/vulcan/img/cfn/11307KFcs3gBlcheONy-ZOYZ5kplFnq5jXinUSI8HkCc8P2gdI1_32JrKJ-vxns32LjXBcQteG2EOwuzWS_KXqE5VCYFmS4Z.png",
-//       ranking: 10,
-//       description: "game slays",
-//       review_timestamp: "2024-08-14",
-//       likes: 30
-//   },
-//   {
-//       id: 2,
-//       reviewer: "Joe Blogs",
-//       media_type: "Video Game",
-//       media_name: "Stardew Valley",
-//       media_art: "https://upload.wikimedia.org/wikipedia/en/f/fd/Logo_of_Stardew_Valley.png",
-//       ranking: 10,
-//       description: "boysack within angus",
-//       review_timestamp: "2024-08-14",
-//       likes: 24
-//   },
-//   {
-//       id: 3,
-//       reviewer: "Joe Blogs",
-//       media_type: "Video Game",
-//       media_name: "Grand Theft Auto 5",
-//       media_art: "https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1364906194.jpg",
-//       ranking: 10,
-//       description: ":)",
-//       review_timestamp: "2024-08-14",
-//       likes: 24
-//   },
-//   {
-//     id: 4,
-//     reviewer: "Joe Blogs",
-//     media_type: "Video Game",
-//     media_name: "Baldurs Gate 3",
-//     media_art: "https://preview.redd.it/new-game-cover-from-larians-website-v0-m2lmw222h0ka1.png?auto=webp&s=ba904ad42906960a96a70ce1c27ee6d3ff5edead",
-//     ranking: 10,
-//     description: "red lady",
-//     review_timestamp: "2024-08-14",
-//     likes: 10
-//   }
-  
-// ]
+  const [reviews, setReviews] = useState([]);
 
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/get_data')
+    .then(response => {
+      setReviews(response.data);
+    })  
+    .catch(error => {
+      console.error(error);
+      });
+  }, []);
 
 
   return (
@@ -68,10 +32,10 @@ function Review(props) {
   return (
     <div className='review'>      
       <div className='review-container'>
-          <img className='review-image' src={props.header_image} />
+          <img alt="header for game" className='review-image' src={props.header_image} />
           <div className='review-information'>
             <div className='like-info'>
-              <img onClick={handleLike} className='like-button' src='https://static.vecteezy.com/system/resources/previews/021/013/524/original/like-icon-on-transparent-background-free-png.png' />     
+              <img alt="like button" onClick={handleLike} className='like-button' src='https://static.vecteezy.com/system/resources/previews/021/013/524/original/like-icon-on-transparent-background-free-png.png' />     
               {props.likes}       
             </div>
             <div className='details'>
